@@ -4,6 +4,10 @@ import os
 import os.path as osp
 from copy import deepcopy
 
+device = os.getenv('ONE_ITER_TOOL_DEVICE', None)
+if device == 'dipu':
+    import torch_dipu
+
 from mmengine.config import Config, ConfigDict, DictAction
 from mmengine.runner import Runner
 from mmengine.utils import digit_version
@@ -150,6 +154,9 @@ def main():
 
     # build the runner from config
     runner = Runner.from_cfg(cfg)
+
+    from capture import insert_capture
+    insert_capture(runner)
 
     # start training
     runner.train()
