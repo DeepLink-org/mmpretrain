@@ -1,6 +1,6 @@
 # optimizer
 optim_wrapper = dict(
-    optimizer=dict(type='AdamW', lr=0.003, weight_decay=0.3),
+    optimizer=dict(type='AdamW', lr=0.003, weight_decay=0.3,foreach=False),
     # specific to vit pretrain
     paramwise_cfg=dict(custom_keys={
         '.cls_token': dict(decay_mult=0.0),
