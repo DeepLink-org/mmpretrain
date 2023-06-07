@@ -53,7 +53,7 @@ test_pipeline = [
 ]
 
 train_dataloader = dict(
-    batch_size=4,
+    batch_size=1,
     num_workers=0,
     persistent_workers=False,
     dataset=dict(
@@ -66,7 +66,7 @@ train_dataloader = dict(
 )
 
 val_dataloader = dict(
-    batch_size=4,
+    batch_size=1,
     num_workers=0,
     persistent_workers=False,
     dataset=dict(
