@@ -48,4 +48,4 @@ load_from = None
 resume = False
 
 # Defaults to use random seed and disable `deterministic`
-randomness=dict(seed=0, diff_rank_seed=False, deterministic=True)
+# randomness=dict(seed=0, diff_rank_seed=False, deterministic=True)

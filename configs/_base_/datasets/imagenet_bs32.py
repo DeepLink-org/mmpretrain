@@ -24,12 +24,12 @@ test_pipeline = [
 ]
 
 train_dataloader = dict(
-    batch_size=32,
+    batch_size=2,
     num_workers=0,
     persistent_workers=False,
     dataset=dict(
         type=dataset_type,
-        data_root='/mnt/lustre/share_data/PAT/datasets/Imagenet',
+        data_root='data/imagenet',
         ann_file='meta/train.txt',
         data_prefix='train',
         pipeline=train_pipeline),
@@ -37,12 +37,12 @@ train_dataloader = dict(
 )
 
 val_dataloader = dict(
-    batch_size=32,
+    batch_size=2,
     num_workers=0,
     persistent_workers=False,
     dataset=dict(
         type=dataset_type,
-        data_root='/mnt/lustre/share_data/PAT/datasets/Imagenet',
+        data_root='data/imagenet',
         ann_file='meta/val.txt',
         data_prefix='val',
         pipeline=test_pipeline),
