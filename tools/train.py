@@ -4,9 +4,7 @@ import os
 import os.path as osp
 from copy import deepcopy
 
-device = os.getenv('ONE_ITER_TOOL_DEVICE', None)
-if device == 'dipu':
-    import torch_dipu
+
 from capture import insert_capture
 
 from mmengine.config import Config, ConfigDict, DictAction
