@@ -1,4 +1,5 @@
 # model settings
+checkpoint = '/mnt/lustre/share_data/PAT/datasets/pretrain/torchvision/resnet50-0676ba61.pth'
 model = dict(
     type='ImageClassifier',
     backbone=dict(
@@ -6,7 +7,9 @@ model = dict(
         depth=50,
         num_stages=4,
         out_indices=(3, ),
-        style='pytorch'),
+        style='pytorch'
+        init_cfg=dict(
+            type='Pretrained', checkpoint=checkpoint, prefix='backbone')),
     neck=dict(type='GlobalAveragePooling'),
     head=dict(
         type='LinearClsHead',
