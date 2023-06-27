@@ -7,7 +7,7 @@ model = dict(
         depth=50,
         num_stages=4,
         out_indices=(3, ),
-        style='pytorch'
+        style='pytorch',
         init_cfg=dict(
             type='Pretrained', checkpoint=checkpoint, prefix='backbone')),
     neck=dict(type='GlobalAveragePooling'),
