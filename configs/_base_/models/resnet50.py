@@ -9,7 +9,7 @@ model = dict(
         out_indices=(3, ),
         style='pytorch',
         init_cfg=dict(
-            type='Pretrained', checkpoint=checkpoint, prefix='backbone')),
+            type='Pretrained', checkpoint=checkpoint)),
     neck=dict(type='GlobalAveragePooling'),
     head=dict(
         type='LinearClsHead',
