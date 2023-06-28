@@ -4,6 +4,9 @@ import os
 import os.path as osp
 from copy import deepcopy
 
+
+from capture import insert_capture
+
 from mmengine.config import Config, ConfigDict, DictAction
 from mmengine.runner import Runner
 from mmengine.utils import digit_version
@@ -150,6 +153,8 @@ def main():
 
     # build the runner from config
     runner = Runner.from_cfg(cfg)
+
+    insert_capture(runner)
 
     # start training
     runner.train()

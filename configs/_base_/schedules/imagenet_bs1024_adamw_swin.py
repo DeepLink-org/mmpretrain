@@ -6,7 +6,7 @@ optim_wrapper = dict(
         lr=5e-4 * 1024 / 512,
         weight_decay=0.05,
         eps=1e-8,
-        betas=(0.9, 0.999)),
+        betas=(0.9, 0.999),foreach=False),
     paramwise_cfg=dict(
         norm_decay_mult=0.0,
         bias_decay_mult=0.0,

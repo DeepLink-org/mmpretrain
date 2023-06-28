@@ -7,7 +7,7 @@ default_hooks = dict(
     timer=dict(type='IterTimerHook'),
 
     # print log every 100 iterations.
-    logger=dict(type='LoggerHook', interval=100),
+    logger=dict(type='LoggerHook', interval=1),
 
     # enable the parameter scheduler.
     param_scheduler=dict(type='ParamSchedulerHook'),
@@ -48,4 +48,4 @@ load_from = None
 resume = False
 
 # Defaults to use random seed and disable `deterministic`
-randomness = dict(seed=None, deterministic=False)
+randomness=dict(seed=0, diff_rank_seed=False, deterministic=True)
