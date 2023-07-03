@@ -1,6 +1,6 @@
 # optimizer
 optim_wrapper = dict(
-    optimizer=dict(type='SGD', lr=0.5, momentum=0.9, weight_decay=0.00004),
+    optimizer=dict(type='SGD', lr=0.5, momentum=0.9, weight_decay=0.00004,foreach=False),
     paramwise_cfg=dict(norm_decay_mult=0),
 )
 
