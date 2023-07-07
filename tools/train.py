@@ -11,7 +11,7 @@ from mmengine.config import Config, ConfigDict, DictAction
 from mmengine.runner import Runner
 from mmengine.utils import digit_version
 from mmengine.utils.dl_utils import TORCH_VERSION
-
+import torch
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train a model')
@@ -155,6 +155,7 @@ def main():
     runner = Runner.from_cfg(cfg)
 
     insert_capture(runner)
+    torch.use_deterministic_algorithms(True,warn_only=True)
 
     # start training
     runner.train()
