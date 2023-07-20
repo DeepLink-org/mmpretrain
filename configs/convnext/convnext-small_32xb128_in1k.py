@@ -6,7 +6,7 @@ _base_ = [
 ]
 
 # dataset setting
-train_dataloader = dict(batch_size=128)
+train_dataloader = dict(batch_size=4)
 
 # schedule setting
 optim_wrapper = dict(
